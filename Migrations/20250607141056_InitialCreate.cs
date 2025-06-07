@@ -99,13 +99,13 @@ namespace Sonare.Migrations
                         column: x => x.OriginalClipId,
                         principalTable: "Clips",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Collaborations_Clips_ResponseClipId",
                         column: x => x.ResponseClipId,
                         principalTable: "Clips",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

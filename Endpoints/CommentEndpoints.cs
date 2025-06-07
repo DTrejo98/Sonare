@@ -14,13 +14,6 @@ namespace Sonare.Endpoints
                 await services.GetAllComments())
                 .WithName("GetAllComments");
 
-            group.MapGet("/{id}", async (int id, ICommentService services) =>
-            {
-                var comment = await services.GetCommentById(id);
-                return comment is not null ? Results.Ok(comment) : Results.NotFound();
-            })
-            .WithName("GetCommentById");
-
             group.MapPost("/", async (Comment comment, ICommentService services) =>
             {
                 var created = await services.CreateComment(comment);

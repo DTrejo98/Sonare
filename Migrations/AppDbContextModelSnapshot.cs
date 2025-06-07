@@ -327,13 +327,13 @@ namespace Sonare.Migrations
                     b.HasOne("Sonare.Models.Clip", "OriginalClip")
                         .WithMany("OriginalCollaborations")
                         .HasForeignKey("OriginalClipId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Sonare.Models.Clip", "ResponseClip")
                         .WithMany("ResponseCollaborations")
                         .HasForeignKey("ResponseClipId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("OriginalClip");
