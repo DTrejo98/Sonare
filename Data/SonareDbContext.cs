@@ -28,50 +28,43 @@ namespace Sonare.Data
             modelBuilder.Entity<Clip>()
                 .HasOne(c => c.User)
                 .WithMany(u => u.Clips)
-                .HasForeignKey(c => c.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(c => c.UserId);
 
             // Comment -> Clip
             modelBuilder.Entity<Comment>()
                 .HasOne(c => c.Clip)
                 .WithMany(c => c.Comments)
-                .HasForeignKey(c => c.ClipId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(c => c.ClipId);
 
             // Comment -> User
             modelBuilder.Entity<Comment>()
                 .HasOne(c => c.User)
                 .WithMany(u => u.Comments)
-                .HasForeignKey(c => c.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(c => c.UserId);
 
             // Collaboration -> OriginalClip
             modelBuilder.Entity<Collaboration>()
                 .HasOne(c => c.OriginalClip)
                 .WithMany(c => c.OriginalCollaborations)
-                .HasForeignKey(c => c.OriginalClipId)
-                .OnDelete(DeleteBehavior.Restrict); // Prevent cascading circular delete
+                .HasForeignKey(c => c.OriginalClipId);
 
             // Collaboration -> ResponseClip
             modelBuilder.Entity<Collaboration>()
                 .HasOne(c => c.ResponseClip)
                 .WithMany(c => c.ResponseCollaborations)
-                .HasForeignKey(c => c.ResponseClipId)
-                .OnDelete(DeleteBehavior.Restrict); // Prevent cascading circular delete
+                .HasForeignKey(c => c.ResponseClipId);
 
             // ClipCollaborator -> Clip
             modelBuilder.Entity<ClipCollaborator>()
                 .HasOne(cc => cc.Clip)
                 .WithMany(c => c.ClipCollaborators)
-                .HasForeignKey(cc => cc.ClipId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(cc => cc.ClipId);
 
             // ClipCollaborator -> User
             modelBuilder.Entity<ClipCollaborator>()
                 .HasOne(cc => cc.User)
                 .WithMany(u => u.ClipCollaborations)
-                .HasForeignKey(cc => cc.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(cc => cc.UserId);
 
             // Seed Data
             modelBuilder.Entity<User>().HasData(UserData.Users);

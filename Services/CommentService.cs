@@ -17,11 +17,6 @@ namespace Sonare.Services
             return await _commentRepository.GetAllComments();
         }
 
-        public async Task<Comment?> GetCommentById(int id)
-        {
-            return await _commentRepository.GetCommentById(id);
-        }
-
         public async Task<Comment?> CreateComment(Comment comment)
         {
             return await _commentRepository.CreateComment(comment);

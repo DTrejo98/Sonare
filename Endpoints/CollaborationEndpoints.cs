@@ -28,6 +28,13 @@ namespace Sonare.Endpoints
             })
             .WithName("CreateCollaboration");
 
+            group.MapPut("/{id}", async (int id, Collaboration updatedCollab, ICollaborationService services) =>
+            {
+                var result = await services.UpdateCollaboration(id, updatedCollab);
+                return result is not null ? Results.Ok(result) : Results.NotFound();
+            })
+            .WithName("UpdateCollaboration");
+
             group.MapDelete("/{id}", async (int id, ICollaborationService services) =>
             {
                 var deleted = await services.DeleteCollaboration(id);

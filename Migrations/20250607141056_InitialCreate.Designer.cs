@@ -12,7 +12,7 @@ using Sonare.Data;
 namespace Sonare.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250606013301_InitialCreate")]
+    [Migration("20250607141056_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -330,13 +330,13 @@ namespace Sonare.Migrations
                     b.HasOne("Sonare.Models.Clip", "OriginalClip")
                         .WithMany("OriginalCollaborations")
                         .HasForeignKey("OriginalClipId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Sonare.Models.Clip", "ResponseClip")
                         .WithMany("ResponseCollaborations")
                         .HasForeignKey("ResponseClipId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("OriginalClip");

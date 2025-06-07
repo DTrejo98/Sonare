@@ -27,6 +27,11 @@ namespace Sonare.Services
             return await _collaborationRepository.CreateCollaboration(collaboration);
         }
 
+        public async Task<Collaboration?> UpdateCollaboration(int id, Collaboration updatedCollaboration)
+        {
+            return await _collaborationRepository.UpdateCollaboration(id, updatedCollaboration);
+        }
+
         public async Task<Collaboration> DeleteCollaboration(int id)
         {
             return await _collaborationRepository.DeleteCollaboration(id);

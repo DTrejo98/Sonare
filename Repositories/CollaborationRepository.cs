@@ -31,6 +31,19 @@ namespace Sonare.Repositories
             return result.Entity;
         }
 
+        public async Task<Collaboration?> UpdateCollaboration(int id, Collaboration updatedCollaboration)
+        {
+            var existing = await _context.Collaborations.FindAsync(id);
+            if (existing == null) return null;
+
+            existing.OriginalClipId = updatedCollaboration.OriginalClipId;
+            existing.ResponseClipId = updatedCollaboration.ResponseClipId;
+            existing.CreatedAt = updatedCollaboration.CreatedAt;
+
+            await _context.SaveChangesAsync();
+            return existing;
+        }
+
         public async Task<Collaboration> DeleteCollaboration(int id)
         {
             var collab = await _context.Collaborations.FindAsync(id);
