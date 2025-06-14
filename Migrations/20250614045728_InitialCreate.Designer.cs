@@ -12,7 +12,7 @@ using Sonare.Data;
 namespace Sonare.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250607141056_InitialCreate")]
+    [Migration("20250614045728_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
