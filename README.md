@@ -10,9 +10,9 @@ Inspired by the TikTok/Reels format, Sonare brings musicians together through se
 
 ## 🔗 Links
 
-- 🚀 [Deployed Project](https://your-deployed-app-url.com)
-- 📋 [Project Board](https://github.com/your-username/sonare/projects/1)
-- 📬 [Postman Documentation](https://www.postman.com/your-workspace/documents/sonare-api)
+- 🚀 [Deployed Project]([https://your-deployed-app-url.com](https://github.com/DTrejo98/Sonare))
+- 📋 [Project Board](https://github.com/users/DTrejo98/projects/10)
+- 📬 [Postman Documentation](https://documenter.getpostman.com/view/36672102/2sB2x6nYSu)
 
 ---
 
@@ -42,7 +42,7 @@ Sonare is designed for musicians, producers, and creators who want to:
 
 ## 👥 Contributors
 
-- [David Trejo Mendoza](https://github.com/DavidTrejoMendoza)
+- [David Trejo Mendoza](https://github.com/DTrejo98)
 
 ---
 
