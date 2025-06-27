@@ -15,12 +15,12 @@ namespace Sonare.Endpoints
                 .WithName("GetAllUsers")
                 .Produces<List<User>>(StatusCodes.Status200OK);
 
-            group.MapGet("/{id}", async (int id, IUserService services) =>
+            group.MapGet("/{uid}", async (string uid, IUserService services) =>
             {
-                var user = await services.GetUserById(id);
+                var user = await services.GetUserByUid(uid);
                 return user is not null ? Results.Ok(user) : Results.NotFound();
             })
-            .WithName("GetUserById");
+            .WithName("GetUserByUid");
 
             group.MapPost("/", async (User user, IUserService services) =>
             {
