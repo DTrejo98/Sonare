@@ -19,9 +19,13 @@ namespace Sonare.Repositories
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<User?> GetUserById(int id)
+        public async Task<User> GetUserByUid(string uid)
         {
-            return await _context.Users.FindAsync(id);
+            return await _context.Users
+                .Include(u => u.Clips)
+                .Include(u => u.Comments)
+                .Include(u => u.ClipCollaborations)
+                .FirstOrDefaultAsync(u => u.Uid == uid);
         }
 
         public async Task<User?> CreateUser(User user)
@@ -38,7 +42,7 @@ namespace Sonare.Repositories
 
             existingUser.Username = user.Username;
             existingUser.Email = user.Email;
-            existingUser.PasswordHash = user.PasswordHash;
+            existingUser.Password = user.Password;
             await _context.SaveChangesAsync();
             return existingUser;
         }

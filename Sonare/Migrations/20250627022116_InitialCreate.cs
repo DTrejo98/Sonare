@@ -20,9 +20,10 @@ namespace Sonare.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Uid = table.Column<string>(type: "text", nullable: false),
                     Username = table.Column<string>(type: "text", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
-                    PasswordHash = table.Column<string>(type: "text", nullable: false),
+                    Password = table.Column<string>(type: "text", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
@@ -138,12 +139,12 @@ namespace Sonare.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "CreatedAt", "Email", "PasswordHash", "Username" },
+                columns: new[] { "Id", "CreatedAt", "Email", "Password", "Uid", "Username" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "melody@example.com", "hash1", "melodyMaker" },
-                    { 2, new DateTime(2024, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "beats@example.com", "hash2", "beatSmith" },
-                    { 3, new DateTime(2024, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "synth@example.com", "hash3", "synthQueen" }
+                    { 1, new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "melody@example.com", "hash1", "googleUid1", "melodyMaker" },
+                    { 2, new DateTime(2024, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified), "beats@example.com", "hash2", "googleUid2", "beatSmith" },
+                    { 3, new DateTime(2024, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified), "synth@example.com", "hash3", "googleUid3", "synthQueen" }
                 });
 
             migrationBuilder.InsertData(

@@ -253,7 +253,11 @@ namespace Sonare.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PasswordHash")
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Uid")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -271,7 +275,8 @@ namespace Sonare.Migrations
                             Id = 1,
                             CreatedAt = new DateTime(2024, 5, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "melody@example.com",
-                            PasswordHash = "hash1",
+                            Password = "hash1",
+                            Uid = "googleUid1",
                             Username = "melodyMaker"
                         },
                         new
@@ -279,7 +284,8 @@ namespace Sonare.Migrations
                             Id = 2,
                             CreatedAt = new DateTime(2024, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "beats@example.com",
-                            PasswordHash = "hash2",
+                            Password = "hash2",
+                            Uid = "googleUid2",
                             Username = "beatSmith"
                         },
                         new
@@ -287,7 +293,8 @@ namespace Sonare.Migrations
                             Id = 3,
                             CreatedAt = new DateTime(2024, 5, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "synth@example.com",
-                            PasswordHash = "hash3",
+                            Password = "hash3",
+                            Uid = "googleUid3",
                             Username = "synthQueen"
                         });
                 });

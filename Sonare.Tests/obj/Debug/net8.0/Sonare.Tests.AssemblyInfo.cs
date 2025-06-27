@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sonare.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ed96e3cf51ae96e121fe76201b2cb8f7321873e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6c4de048726d3eba8d5c88fc7239ca4adc1a1c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sonare.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sonare.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

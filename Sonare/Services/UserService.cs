@@ -17,9 +17,9 @@ namespace Sonare.Services
             return await _userRepository.GetAllUsers();
         }
 
-        public async Task<User?> GetUserById(int id)
+        public async Task<User?> GetUserByUid(string uid)
         {
-            return await _userRepository.GetUserById(id);
+            return await _userRepository.GetUserByUid(uid);
         }
 
         public async Task<User?> CreateUser(User user)
